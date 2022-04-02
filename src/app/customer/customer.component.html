@@ -1,0 +1,24 @@
+<div class="card" *ngFor="let customer of customers" style="min-height: 44.5vh;">
+  <div class="card-header">
+    <div class="row">
+      <i class="fa fa-user fa-2x col-1" aria-hidden="true"></i>
+      <h3 class="col-10">{{customer.name}}</h3>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-4">
+        <button type="button" class="btn btn-primary" (click)="customer.onSubscribe()" *ngIf="!customer.hasSubscription">Subscribe</button>
+        <button type="button" class="btn btn-primary" (click)="customer.onUnsubscribe()" *ngIf="customer.hasSubscription">Unsubscribe</button>
+      </div>
+    </div>
+    <hr/>
+    <div class="row" *ngIf="customer.Magazines.length > 0">
+      <h5>Received Magazines</h5>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let b of customer.Magazines">{{b}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+

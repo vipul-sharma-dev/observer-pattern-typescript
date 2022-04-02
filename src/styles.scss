@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./app/styles/scss/main.scss";
+
+div.card-header {
+  font-size: large;
+}
+
+div.card {
+  margin-top: 10px;
+  height: auto;
+}
+
+.table {
+  margin-top: 10px;
+}

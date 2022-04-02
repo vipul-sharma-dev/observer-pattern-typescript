@@ -1,0 +1,29 @@
+<div class="card" style="min-height: 90vh;">
+  <div class="card-header">
+    <div class="row">
+      <i class="fa fa-book fa-2x col-1" aria-hidden="true"></i>
+      <h3 class="col-10">Book Shop</h3>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-4">
+        <button type="button" class="btn btn-primary" (click)="publishMagazine()">Publish new Magazine</button>
+      </div>
+      <div *ngIf="Magazines.length > 0; else noBook" class="col-8 row">
+        <h4 class="card-title col-4">Latest Edition</h4>
+        <h4 class="card-title col-8" >{{ Magazines[0] }}</h4>
+      </div>
+      <ng-template #noBook>
+        <h4 class="card-title col-8">Publishing new magazine soon!</h4>
+      </ng-template>
+    </div>
+    <hr/>
+    <div class="row" *ngIf="Magazines.length > 0">
+      <h5>Published Magazines</h5>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let b of Magazines">{{b}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
